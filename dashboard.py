@@ -72,7 +72,7 @@ def main():
             hoverinfo='text')
 
         data_sell_in = [bar_sell_in, scatter_sell_in, line_sell_in]
-        layout_sell_in = go.Layout(title=f'SELL IN REAL UNIDADES vs SELL IN PLAN UNIDADES',
+        layout_sell_in = go.Layout(title=f'SELL IN REAL (Ud) vs SELL IN PLAN (Ud)',
             xaxis_title=periodo, 
             yaxis_title='Unidades',
             yaxis2=dict(title='% CUMPLIMIENTO',
@@ -137,7 +137,7 @@ def main():
             hoverinfo='text')
 
         data_total_sell = [bar_total_sell_in, bar_total_sell_out, scatter_total_sell, line_total_sell]
-        layout_total_sell = go.Layout(title=f'TOTAL SELL REAL UNIDADES vs TOTAL SELL PLAN UNIDADES', 
+        layout_total_sell = go.Layout(title=f'TOTAL SELL REAL (Ud) vs TOTAL SELL PLAN (Ud)', 
             xaxis_title=periodo, 
             yaxis_title='Unidades', 
             yaxis2=dict(title='% CUMPLIMIENTO', overlaying='y', side='right', range=[0,300]), 
