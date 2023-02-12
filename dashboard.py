@@ -176,7 +176,7 @@ def main():
             yaxis2=dict(title='WEEKS OF STOCK', overlaying='y', side='right', range=[0,None]),
             legend=dict(x=0.1, y=1.15, orientation="h"))
         fig_stock=go.Figure(data=data_stock, layout=layout_stock)
-        st.plotly_chart(fig_stock, use_container_width=False)
+        st.plotly_chart(fig_stock, use_column_width=True, use_container_width=True)
 
         
         
