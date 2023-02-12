@@ -56,10 +56,10 @@ def main():
         #SELL IN
 
         df_grafico['% CUMPLIMIENTO SELL IN'] = df_grafico['SELL IN REAL UNIDADES'] / df_grafico['SELL IN PLAN INICIAL UNIDADES'] * 100
-        bar_sell_in = go.Bar(x=df_grafico[x_axis], y=df_grafico['SELL IN REAL UNIDADES'], name='SELL IN REAL UNIDADES', marker_color='#9fd3c7')
+        bar_sell_in = go.Bar(x=df_grafico[x_axis], y=df_grafico['SELL IN REAL UNIDADES'], name='SELL IN REAL (Ud)', marker_color='#9fd3c7')
         scatter_sell_in = go.Scatter(x=df_grafico[x_axis], 
             y=df_grafico['SELL IN PLAN INICIAL UNIDADES'], 
-            name='SELL IN PLAN UNIDADES', 
+            name='SELL IN PLAN (Ud)', 
             mode='markers', 
             marker=dict(size=10, line=dict(width=3), color='#113f67', symbol='line-ew-open'))
         line_sell_in = go.Scatter(x=df_grafico[x_axis],
@@ -86,10 +86,10 @@ def main():
 
         #SELL OUT
         df_grafico['% CUMPLIMIENTO SELL OUT'] = df_grafico['SELL OUT REAL UNIDADES'] / df_grafico['SELL OUT PLAN INICIAL UNIDADES'] * 100
-        bar_sell_out = go.Bar(x=df_grafico[x_axis], y=df_grafico['SELL OUT REAL UNIDADES'], name='SELL OUT REAL UNIDADES', marker_color='#9fd3c7')
+        bar_sell_out = go.Bar(x=df_grafico[x_axis], y=df_grafico['SELL OUT REAL UNIDADES'], name='SELL OUT REAL (Ud)', marker_color='#9fd3c7')
         scatter_sell_out = go.Scatter(x=df_grafico[x_axis], 
             y=df_grafico['SELL OUT PLAN INICIAL UNIDADES'], 
-            name='SELL OUT PLAN UNIDADES',
+            name='SELL OUT PLAN (Ud)',
             mode='markers', 
             marker=dict(size=10, line=dict(width=3), color='#113f67', symbol='line-ew-open'))
         line_sell_out = go.Scatter(x=df_grafico[x_axis], 
@@ -102,7 +102,7 @@ def main():
             hoverinfo='text')
 
         data_sell_out = [bar_sell_out, scatter_sell_out, line_sell_out]
-        layout_sell_out = go.Layout(title=f'SELL OUT REAL UNIDADES vs SELL OUT PLAN UNIDADES', 
+        layout_sell_out = go.Layout(title=f'SELL OUT REAL (Ud) vs SELL OUT PLAN (Ud)', 
             xaxis_title=periodo, 
             yaxis_title='Unidades', 
             yaxis2=dict(title='% CUMPLIMIENTO', 
@@ -117,12 +117,12 @@ def main():
 
         df_grafico['% CUMPLIMIENTO TOTAL'] = df_grafico['TOTAL SELL REAL UNIDADES'] / df_grafico['TOTAL SELL PLAN UNIDADES'] * 100
 
-        bar_total_sell_in = go.Bar(x=df_grafico[x_axis], y=df_grafico['SELL IN REAL UNIDADES'], name= 'SELL IN REAL UNIDADES', marker_color='#2d6e7e')
-        bar_total_sell_out = go.Bar(x=df_grafico[x_axis], y=df_grafico['SELL OUT REAL UNIDADES'],  name= 'SELL OUT REAL UNIDADES', marker_color='#9fd3c7')
+        bar_total_sell_in = go.Bar(x=df_grafico[x_axis], y=df_grafico['SELL IN REAL UNIDADES'], name= 'SELL IN REAL (Ud)', marker_color='#2d6e7e')
+        bar_total_sell_out = go.Bar(x=df_grafico[x_axis], y=df_grafico['SELL OUT REAL UNIDADES'],  name= 'SELL OUT REAL (Ud)', marker_color='#9fd3c7')
 
         scatter_total_sell = go.Scatter(x=df_grafico[x_axis], 
             y=df_grafico['TOTAL SELL PLAN UNIDADES'], 
-            name='TOTAL SELL PLAN UNIDADES', 
+            name='TOTAL SELL PLAN (Ud)', 
             mode='markers', 
             marker=dict(size=10, line=dict(width=3), color='#113f67', symbol='line-ew-open'))
 
