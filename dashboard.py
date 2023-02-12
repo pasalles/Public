@@ -147,14 +147,15 @@ def main():
 
         
         # Selecionador tipo de venta y desplega el gráfico correspondiente
+        config={'displayModeBar': False}
         sales_options = ["TOTAL", "SELL IN", "SELL OUT"]
         selected_sales_option=st.selectbox("Seleccione el tipo de venta a visualizar:", sales_options)
         if selected_sales_option=="SELL IN":
-            st.plotly_chart(fig_sell_in, use_column_width=True, use_container_width=True)
+            st.plotly_chart(fig_sell_in, use_column_width=True, use_container_width=True, config=config)
         elif selected_sales_option=="SELL OUT":
-            st.plotly_chart(fig_sell_out, use_column_width=True, use_container_width=True)
+            st.plotly_chart(fig_sell_out, use_column_width=True, use_container_width=True, config=config)
         else:
-            st.plotly_chart(fig_total_sell, use_column_width=True, use_container_width=True)
+            st.plotly_chart(fig_total_sell, use_column_width=True, use_container_width=True, config=config)
         
         # Gráfico de stock total
         df_grafico['WOS']=df_grafico['INVENTARIO DEL CANAL']/df_grafico['TOTAL SELL REAL UNIDADES']
@@ -176,7 +177,7 @@ def main():
             yaxis2=dict(title='WEEKS OF STOCK', overlaying='y', side='right', range=[0,None]),
             legend=dict(x=0.1, y=1.15, orientation="h"))
         fig_stock=go.Figure(data=data_stock, layout=layout_stock)
-        st.plotly_chart(fig_stock, use_column_width=True, use_container_width=True)
+        st.plotly_chart(fig_stock, use_column_width=True, use_container_width=True, config=config)
 
         
         
@@ -194,7 +195,7 @@ def main():
             xaxis_title=periodo,
             legend=dict(x=0.1, y=1.15, orientation="h"))
         fig_gastos = go.Figure(data=[gasto_real, gasto_plan], layout=layout_gastos)
-        st.plotly_chart(fig_gastos, use_column_width=True, use_container_width=True)
+        st.plotly_chart(fig_gastos, use_column_width=True, use_container_width=True, config=config)
 
 
     #Mostrar dataframe del grafico
