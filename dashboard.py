@@ -4,7 +4,7 @@ import plotly.graph_objs as go
 import streamlit as st
 
 # Importa el documento, ETL
-df0 = pd.read_excel('C:/Users/filip/Documents/Python/dashboard/Data_Caso_BI.xlsx', skiprows=4)
+df0 = pd.read_excel('Data_Caso_BI.xlsx', skiprows=4)
 df=df0.loc[:,'CLIENTE':'SI Real FACTURADO']
 
 # Algunas transformaciones
