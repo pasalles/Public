@@ -78,8 +78,8 @@ def main():
             yaxis2=dict(title='% CUMPLIMIENTO',
                 overlaying='y', 
                 side='right',
-                autorange=False,
-                range=[0,300]), 
+                autorange=True,
+                ), 
             legend=dict(x=0.1, y=1.15, orientation="h"))
         fig_sell_in = go.Figure(data=data_sell_in, layout=layout_sell_in)
 
@@ -106,8 +106,9 @@ def main():
             xaxis_title=periodo, 
             yaxis_title='Unidades', 
             yaxis2=dict(title='% CUMPLIMIENTO', 
-            overlaying='y', 
-            side='right', range=[0,300]), 
+                overlaying='y', 
+                side='right', 
+                autorange=True), 
             legend=dict(x=0.1, y=1.15, orientation="h"))
         fig_sell_out = go.Figure(data=data_sell_out, layout=layout_sell_out)
 
@@ -140,7 +141,7 @@ def main():
         layout_total_sell = go.Layout(title=f'TOTAL SELL REAL (Ud) vs TOTAL SELL PLAN (Ud)', 
             xaxis_title=periodo, 
             yaxis_title='Unidades', 
-            yaxis2=dict(title='% CUMPLIMIENTO', overlaying='y', side='right', range=[0,300]), 
+            yaxis2=dict(title='% CUMPLIMIENTO', overlaying='y', side='right', autorange=True), 
             legend=dict(x=0.1, y=1.15, orientation="h"))
         fig_total_sell = go.Figure(data=data_total_sell, layout=layout_total_sell)
         fig_total_sell.update_layout(barmode='stack')
